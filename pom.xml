@@ -22,54 +22,51 @@
 		<lombok.version>1.18.32</lombok.version>
 		<jakarta.validation-api.version>3.1.0</jakarta.validation-api.version>
 		<openapi.generator.plugin.version>6.6.0</openapi.generator.plugin.version>
-        <swagger.codegen.output.folder>${project.build.directory}/generated-sources/swagger</swagger.codegen.output.folder>
-        <swagger.modelPackage>br.com.iasd.cental.cajazeira8.dto</swagger.modelPackage>
-        <swagger.apiPackage>br.com.iasd.cental.cajazeira8.rest</swagger.apiPackage>
+        	<swagger.codegen.output.folder>${project.build.directory}/generated-sources/swagger</swagger.codegen.output.folder>
+        	<swagger.modelPackage>br.com.iasd.cental.cajazeira8.dto</swagger.modelPackage>
+        	<swagger.apiPackage>br.com.iasd.cental.cajazeira8.rest</swagger.apiPackage>
 	</properties>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-                <plugin>
-                    <groupId>org.openapitools</groupId>
-                    <artifactId>openapi-generator-maven-plugin</artifactId>
-                    <version>${openapi.generator.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>generate</goal>
-                            </goals>
-                            <configuration>
-                                <skipValidateSpec>true</skipValidateSpec>
-                                <output>${swagger.codegen.output.folder}</output>
-                                <!-- <inputSpec>${project.basedir}/src/main/resources/apis/portal-api-apis.yml</inputSpec> -->
-                                <inputSpec>${swagger.specification.yml.path}</inputSpec>
-                                <generatorName>spring</generatorName>
-                                <apiPackage>${swagger.apiPackage}</apiPackage>
-                                <modelPackage>${swagger.modelPackage}</modelPackage>
-                                <configOptions>
-                                    <useTags>true</useTags>
-                                    <interfaceOnly>true</interfaceOnly>
-                                    <sourceFolder>src/main/java/</sourceFolder>
-                                    <delegatePattern>true</delegatePattern>
-                                    <interfaceOnly>true</interfaceOnly>
-                                    <useJakartaEe>true</useJakartaEe>
-                                    <useSpringBoot3>true</useSpringBoot3>
-                                </configOptions>
-                            </configuration>
-                        </execution>
-                        
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+    	<build>
+        	<pluginManagement>
+            		<plugins>
+                		<plugin>
+                    			<groupId>org.springframework.boot</groupId>
+                    			<artifactId>spring-boot-maven-plugin</artifactId>
+                		</plugin>
+                		<plugin>
+                	    		<groupId>org.openapitools</groupId>
+               				<artifactId>openapi-generator-maven-plugin</artifactId>
+             				<version>${openapi.generator.plugin.version}</version>
+                    			<executions>
+                        			<execution>
+                       					<goals>
+                                				<goal>generate</goal>
+                            				</goals>
+                            				<configuration>
+                                				<skipValidateSpec>true</skipValidateSpec>
+                                				<output>${swagger.codegen.output.folder}</output>
+                                				<inputSpec>${swagger.specification.yml.path}</inputSpec>
+                                				<generatorName>spring</generatorName>
+                                				<apiPackage>${swagger.apiPackage}</apiPackage>
+                                				<modelPackage>${swagger.modelPackage}</modelPackage>
+                                				<configOptions>
+                                    					<useTags>true</useTags>
+                                    					<interfaceOnly>true</interfaceOnly>
+                                    					<sourceFolder>src/main/java/</sourceFolder>
+                                    					<delegatePattern>true</delegatePattern>
+                                    					<interfaceOnly>true</interfaceOnly>
+                                    					<useJakartaEe>true</useJakartaEe>
+                                   	 				<useSpringBoot3>true</useSpringBoot3>
+                                				</configOptions>
+                            				</configuration>
+                        			</execution>
+	                    		</executions>
+                		</plugin>
+            		</plugins>
+        	</pluginManagement>
 	</build>
-
-    <dependencyManagement>
+    	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -134,7 +131,7 @@
 			<scope>test</scope>
 		</dependency>
 
-        <!-- OPENAPI -->
+        	<!-- OPENAPI -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
